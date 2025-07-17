@@ -7,7 +7,6 @@ import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from './screens/HomeScreen';
 import LearnBasicsScreen from './screens/LearnBasicsScreen';
 import LearnBasicsGuideScreen from './screens/LearnBasicsGuideScreen';
-import PracticeModeScreen from './screens/PracticeModeScreen';
 import SimulatedIphoneScreen from './screens/SimulatedIphoneScreen';
 import SettingsAppScreen from './screens/SettingsAppScreen';
 import CameraAppScreen from './screens/CameraAppScreen';
@@ -69,11 +68,6 @@ export default function App() {
             name="LearnBasicsGuide"
             component={LearnBasicsGuideScreen}
             options={{ title: 'Guide' }}
-          />
-          <Stack.Screen
-            name="PracticeMode"
-            component={PracticeModeScreen}
-            options={{ title: 'Practice Mode' }}
           />
           <Stack.Screen
             name="GuidePlayerScreen"
