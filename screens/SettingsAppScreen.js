@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, Switch } from 'react-native';
 import { globalStyles } from '../styles';
 
 export default function SettingsAppScreen({ navigation, route }) {
-  const { practiceTopic, fromPracticeMode, onPracticeComplete } = route.params || {};
+  const { practiceTopic, fromGuide, onPracticeComplete } = route.params || {};
   const [wifiEnabled, setWifiEnabled] = useState(false);
   const [completed, setCompleted] = useState(false);
 
@@ -17,14 +17,18 @@ export default function SettingsAppScreen({ navigation, route }) {
     }
   };
 
-// inside handleReturn replace with this:
-const handleReturn = () => {
-  navigation.reset({
-    index: 0,
-    routes: [{ name: 'PracticeMode' }],
-  });
-};
-
+  const handleReturn = () => {
+    if (fromGuide) {
+      // Return to Learn Basics screen
+      navigation.navigate('MainTabs', { screen: 'Learn' });
+    } else {
+      // Return to Practice Mode (for backward compatibility)
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'PracticeMode' }],
+      });
+    }
+  };
 
   return (
     <SafeAreaView style={globalStyles.container}>
@@ -34,7 +38,9 @@ const handleReturn = () => {
         <>
           <Text style={globalStyles.subheader}>✅ Wi-Fi Connected!</Text>
           <TouchableOpacity style={globalStyles.button} onPress={handleReturn}>
-            <Text style={globalStyles.buttonText}>Return</Text>
+            <Text style={globalStyles.buttonText}>
+              {fromGuide ? 'Back to Learn Basics' : 'Return'}
+            </Text>
           </TouchableOpacity>
         </>
       ) : (

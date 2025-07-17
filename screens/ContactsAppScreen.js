@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, FlatList } from 'react-native';
 import { globalStyles } from '../styles';
 
 export default function ContactsAppScreen({ navigation, route }) {
-  const { practiceTopic, fromPracticeMode, onPracticeComplete } = route.params || {};
+  const { practiceTopic, fromGuide, onPracticeComplete } = route.params || {};
   const [completed, setCompleted] = useState(false);
 
   const contacts = ['Alice Johnson', 'Bob Smith', 'Charlie Davis', 'Diana Lee'];
@@ -16,12 +16,18 @@ export default function ContactsAppScreen({ navigation, route }) {
     }
   };
 
-const handleReturn = () => {
-  navigation.reset({
-    index: 0,
-    routes: [{ name: 'PracticeMode' }],
-  });
-};
+  const handleReturn = () => {
+    if (fromGuide) {
+      // Return to Learn Basics screen
+      navigation.navigate('MainTabs', { screen: 'Learn' });
+    } else {
+      // Return to Practice Mode (for backward compatibility)
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'PracticeMode' }],
+      });
+    }
+  };
 
   return (
     <SafeAreaView style={globalStyles.container}>
@@ -31,7 +37,9 @@ const handleReturn = () => {
         <>
           <Text style={globalStyles.subheader}>📞 Contact Called!</Text>
           <TouchableOpacity style={globalStyles.button} onPress={handleReturn}>
-            <Text style={globalStyles.buttonText}>Return</Text>
+            <Text style={globalStyles.buttonText}>
+              {fromGuide ? 'Back to Learn Basics' : 'Return'}
+            </Text>
           </TouchableOpacity>
         </>
       ) : (

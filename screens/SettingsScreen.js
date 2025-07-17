@@ -11,12 +11,20 @@ export default function SettingsScreen() {
     speechRate,
     setSpeechRate,
     favorites,
-    setFavorites
+    setFavorites,
+    clearCompletedGuides,
+    completedGuides,
+    readGuides
   } = useContext(SettingsContext);
 
   const clearFavorites = () => {
     setFavorites([]);
     alert('Favorites cleared!');
+  };
+
+  const handleClearCompletedGuides = () => {
+    clearCompletedGuides();
+    alert('Progress cleared!');
   };
 
   return (
@@ -65,8 +73,28 @@ export default function SettingsScreen() {
           ))}
         </View>
 
+        <Text style={{ marginTop: 20, fontSize, fontWeight: 'bold' }}>Progress:</Text>
+        <View style={{ marginBottom: 10 }}>
+          <Text style={{ fontSize: fontSize - 2, color: '#666' }}>
+            📖 Guides read: {readGuides.length}
+          </Text>
+          <Text style={{ fontSize: fontSize - 2, color: '#666' }}>
+            ✅ Guides completed: {completedGuides.length}
+          </Text>
+          <Text style={{ fontSize: fontSize - 2, color: '#666' }}>
+            ⭐ Favorites saved: {favorites.length}
+          </Text>
+        </View>
+
         <TouchableOpacity
-          style={[globalStyles.button, { backgroundColor: '#FF3B30', marginTop: 30 }]}
+          style={[globalStyles.button, { backgroundColor: '#FF9500', marginTop: 10 }]}
+          onPress={handleClearCompletedGuides}
+        >
+          <Text style={globalStyles.buttonText}>🔄 Reset Progress</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={[globalStyles.button, { backgroundColor: '#FF3B30', marginTop: 10 }]}
           onPress={clearFavorites}
         >
           <Text style={globalStyles.buttonText}>🗑️ Clear Favorites</Text>

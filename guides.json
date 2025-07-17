@@ -7,7 +7,7 @@
     "steps": [
       {
         "image": "settings_home.png",
-        "instruction": "Tap on 'Wi-Fi' in the Settings screen.",
+        "instruction": "Open the Settings app on your iPhone.",
         "hotspots": [
           {
             "x": 0.1,
@@ -19,12 +19,440 @@
       },
       {
         "image": "wifi_settings.png",
-        "instruction": "Turn on the Wi-Fi switch.",
+        "instruction": "Tap on 'Wi-Fi' in the Settings screen.",
         "hotspots": [
           {
             "x": 0.85,
             "y": 0.15,
             "width": 0.1,
+            "height": 0.1
+          }
+        ]
+      },
+      {
+        "image": "wifi_settings.png",
+        "instruction": "Turn on the Wi-Fi switch by tapping it.",
+        "hotspots": [
+          {
+            "x": 0.85,
+            "y": 0.15,
+            "width": 0.1,
+            "height": 0.1
+          }
+        ]
+      },
+      {
+        "image": "wifi_settings.png",
+        "instruction": "Select your Wi-Fi network from the list.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.3,
+            "width": 0.8,
+            "height": 0.1
+          }
+        ]
+      },
+      {
+        "image": "wifi_settings.png",
+        "instruction": "Enter your Wi-Fi password when prompted.",
+        "hotspots": [
+          {
+            "x": 0.5,
+            "y": 0.6,
+            "width": 0.4,
+            "height": 0.1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "guide_id": "settings_guide",
+    "title": "Settings Guide",
+    "category": "Settings",
+    "tags": ["settings", "configuration", "beginner"],
+    "steps": [
+      {
+        "image": "settings_home.png",
+        "instruction": "Open the Settings app from your home screen.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.23,
+            "width": 0.8,
+            "height": 0.07
+          }
+        ]
+      },
+      {
+        "image": "settings_home.png",
+        "instruction": "Scroll through the settings menu to find what you need.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.4,
+            "width": 0.8,
+            "height": 0.4
+          }
+        ]
+      },
+      {
+        "image": "settings_home.png",
+        "instruction": "Tap on any setting to change it.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.3,
+            "width": 0.8,
+            "height": 0.1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "guide_id": "camera_guide",
+    "title": "Camera Guide",
+    "category": "Camera",
+    "tags": ["camera", "photo", "beginner"],
+    "steps": [
+      {
+        "image": "camera_home.png",
+        "instruction": "Open the Camera app from your home screen.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.23,
+            "width": 0.8,
+            "height": 0.07
+          }
+        ]
+      },
+      {
+        "image": "camera_interface.png",
+        "instruction": "Point your camera at what you want to photograph.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.2,
+            "width": 0.8,
+            "height": 0.6
+          }
+        ]
+      },
+      {
+        "image": "camera_interface.png",
+        "instruction": "Tap the white circle button to take a photo.",
+        "hotspots": [
+          {
+            "x": 0.45,
+            "y": 0.8,
+            "width": 0.1,
+            "height": 0.1
+          }
+        ]
+      },
+      {
+        "image": "camera_interface.png",
+        "instruction": "Your photo is automatically saved to your Photos app.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.9,
+            "width": 0.8,
+            "height": 0.05
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "guide_id": "contacts_guide",
+    "title": "Contacts Guide",
+    "category": "Contacts",
+    "tags": ["contacts", "phone", "beginner"],
+    "steps": [
+      {
+        "image": "contacts_home.png",
+        "instruction": "Open the Contacts app from your home screen.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.23,
+            "width": 0.8,
+            "height": 0.07
+          }
+        ]
+      },
+      {
+        "image": "contacts_list.png",
+        "instruction": "Scroll through your contacts list to find someone.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.2,
+            "width": 0.8,
+            "height": 0.6
+          }
+        ]
+      },
+      {
+        "image": "contacts_list.png",
+        "instruction": "Tap on a contact's name to see their details.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.3,
+            "width": 0.8,
+            "height": 0.1
+          }
+        ]
+      },
+      {
+        "image": "contact_detail.png",
+        "instruction": "Tap the phone icon to call them.",
+        "hotspots": [
+          {
+            "x": 0.8,
+            "y": 0.5,
+            "width": 0.15,
+            "height": 0.1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "guide_id": "safari_guide",
+    "title": "Safari Guide",
+    "category": "Safari",
+    "tags": ["safari", "internet", "beginner"],
+    "steps": [
+      {
+        "image": "safari_home.png",
+        "instruction": "Open the Safari app from your home screen.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.23,
+            "width": 0.8,
+            "height": 0.07
+          }
+        ]
+      },
+      {
+        "image": "safari_interface.png",
+        "instruction": "Tap the address bar at the top of the screen.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.1,
+            "width": 0.8,
+            "height": 0.05
+          }
+        ]
+      },
+      {
+        "image": "safari_interface.png",
+        "instruction": "Type the website address you want to visit.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.1,
+            "width": 0.8,
+            "height": 0.05
+          }
+        ]
+      },
+      {
+        "image": "safari_interface.png",
+        "instruction": "Tap 'Go' on the keyboard to visit the website.",
+        "hotspots": [
+          {
+            "x": 0.8,
+            "y": 0.9,
+            "width": 0.15,
+            "height": 0.05
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "guide_id": "enable_notifications",
+    "title": "Enable Notifications",
+    "category": "Settings",
+    "tags": ["notifications", "alerts", "beginner"],
+    "steps": [
+      {
+        "image": "settings_home.png",
+        "instruction": "Open the Settings app from your home screen.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.23,
+            "width": 0.8,
+            "height": 0.07
+          }
+        ]
+      },
+      {
+        "image": "settings_home.png",
+        "instruction": "Scroll down and tap on 'Notifications'.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.4,
+            "width": 0.8,
+            "height": 0.1
+          }
+        ]
+      },
+      {
+        "image": "notifications_settings.png",
+        "instruction": "Tap on the app you want to enable notifications for.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.3,
+            "width": 0.8,
+            "height": 0.1
+          }
+        ]
+      },
+      {
+        "image": "notifications_settings.png",
+        "instruction": "Turn on 'Allow Notifications' by tapping the switch.",
+        "hotspots": [
+          {
+            "x": 0.85,
+            "y": 0.2,
+            "width": 0.1,
+            "height": 0.1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "guide_id": "adjust_volume",
+    "title": "Adjust Volume",
+    "category": "Settings",
+    "tags": ["volume", "sound", "beginner"],
+    "steps": [
+      {
+        "image": "volume_buttons.png",
+        "instruction": "Find the volume buttons on the left side of your iPhone.",
+        "hotspots": [
+          {
+            "x": 0.05,
+            "y": 0.3,
+            "width": 0.1,
+            "height": 0.2
+          }
+        ]
+      },
+      {
+        "image": "volume_buttons.png",
+        "instruction": "Press the volume up button (+) to increase volume.",
+        "hotspots": [
+          {
+            "x": 0.05,
+            "y": 0.2,
+            "width": 0.1,
+            "height": 0.1
+          }
+        ]
+      },
+      {
+        "image": "volume_buttons.png",
+        "instruction": "Press the volume down button (-) to decrease volume.",
+        "hotspots": [
+          {
+            "x": 0.05,
+            "y": 0.4,
+            "width": 0.1,
+            "height": 0.1
+          }
+        ]
+      },
+      {
+        "image": "volume_buttons.png",
+        "instruction": "You'll see a volume indicator on screen when you press the buttons.",
+        "hotspots": [
+          {
+            "x": 0.2,
+            "y": 0.3,
+            "width": 0.6,
+            "height": 0.1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "guide_id": "open_maps",
+    "title": "Open Maps",
+    "category": "Maps",
+    "tags": ["maps", "navigation", "beginner"],
+    "steps": [
+      {
+        "image": "maps_home.png",
+        "instruction": "Open the Maps app from your home screen.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.23,
+            "width": 0.8,
+            "height": 0.07
+          }
+        ]
+      },
+      {
+        "image": "maps_interface.png",
+        "instruction": "Tap the search bar at the top of the screen.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.1,
+            "width": 0.8,
+            "height": 0.05
+          }
+        ]
+      },
+      {
+        "image": "maps_interface.png",
+        "instruction": "Type the name of a place you want to find.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.1,
+            "width": 0.8,
+            "height": 0.05
+          }
+        ]
+      },
+      {
+        "image": "maps_interface.png",
+        "instruction": "Tap on the place name in the search results.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.2,
+            "width": 0.8,
+            "height": 0.1
+          }
+        ]
+      },
+      {
+        "image": "maps_interface.png",
+        "instruction": "Tap 'Directions' to get directions to that place.",
+        "hotspots": [
+          {
+            "x": 0.1,
+            "y": 0.8,
+            "width": 0.8,
             "height": 0.1
           }
         ]

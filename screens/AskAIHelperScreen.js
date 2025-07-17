@@ -8,7 +8,10 @@ import axios from 'axios';
 import { globalStyles } from '../styles';
 import { SettingsContext } from '../SettingsContext';
 
-//const OPENAI_API_KEY = '';
+// IMPORTANT: You must securely provide your OpenAI API key for production use.
+// DO NOT hardcode your API key in the source code for App Store submission.
+// Recommended: Use environment variables or a secure backend proxy.
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '';
 
 export default function AskAIHelperScreen() {
   const { fontSize, speechRate, favorites, setFavorites } = useContext(SettingsContext);
