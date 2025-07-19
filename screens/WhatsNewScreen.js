@@ -2,21 +2,39 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import React, { useState, useEffect, useContext } from 'react';
 import { ScrollView, Text, View, TouchableOpacity, Linking, ActivityIndicator } from 'react-native';
 import { globalStyles, responsiveFontSize, responsivePadding } from '../styles';
-import { SettingsContext } from '../SettingsContext'; // Optional: for global font size
+import { SettingsContext } from '../SettingsContext';
+import Constants from 'expo-constants';
 
 export default function WhatsNewScreen() {
-  const { fontSize } = useContext(SettingsContext); // Optional
+  const { fontSize } = useContext(SettingsContext);
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const fetchNews = async () => {
     setLoading(true);
     try {
-      // Use environment variable for API key
-      const newsApiKey = process.env.NEWS_API_KEY || '';
+      // Use Expo Constants to access environment variables
+      const newsApiKey = Constants.expoConfig?.extra?.newsApiKey || '';
       
       if (!newsApiKey) {
-        setArticles([]);
+        // Show mock data when API key is not available
+        setArticles([
+          {
+            title: "AI Technology Helps Seniors Stay Connected",
+            description: "New developments in artificial intelligence are making it easier for elderly users to navigate smartphones and stay connected with family.",
+            url: "https://example.com/ai-seniors"
+          },
+          {
+            title: "Voice Assistants Improve Accessibility",
+            description: "Voice-controlled AI assistants are becoming more popular among older adults, helping them use technology more easily.",
+            url: "https://example.com/voice-assistants"
+          },
+          {
+            title: "Smartphone Tutorials for Beginners",
+            description: "Educational apps and guides are helping seniors learn to use their smartphones effectively.",
+            url: "https://example.com/smartphone-tutorials"
+          }
+        ]);
         return;
       }
       

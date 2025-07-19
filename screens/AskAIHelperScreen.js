@@ -7,11 +7,12 @@ import {
 import axios from 'axios';
 import { globalStyles, responsiveFontSize, responsivePadding } from '../styles';
 import { SettingsContext } from '../SettingsContext';
+import Constants from 'expo-constants';
 
 // IMPORTANT: You must securely provide your OpenAI API key for production use.
 // DO NOT hardcode your API key in the source code for App Store submission.
 // Recommended: Use environment variables or a secure backend proxy.
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '';
+const OPENAI_API_KEY = Constants.expoConfig?.extra?.openaiApiKey || '';
 
 export default function AskAIHelperScreen() {
   const { fontSize, speechRate, favorites, setFavorites } = useContext(SettingsContext);
