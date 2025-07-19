@@ -16,7 +16,9 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.anonymous.TechCompanionApp",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSPhotoLibraryUsageDescription": "This app may access your photo library to help you learn how to use your iPhone's camera and photos features. This helps provide better guidance when teaching you about your device.",
+        "NSSpeechRecognitionUsageDescription": "This app uses speech recognition to help you interact with the AI assistant more easily. You can speak your questions instead of typing them."
       }
     },
     "android": {

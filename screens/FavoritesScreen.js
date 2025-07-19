@@ -1,7 +1,7 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import React, { useContext } from 'react';
 import { ScrollView, Text, View, TouchableOpacity } from 'react-native';
-import { globalStyles } from '../styles';
+import { globalStyles, responsiveFontSize, responsivePadding } from '../styles';
 import { SettingsContext } from '../SettingsContext';
 
 export default function FavoritesScreen() {
@@ -16,16 +16,16 @@ export default function FavoritesScreen() {
     <SafeAreaView style={globalStyles.container}>
       <ScrollView>
         <Text style={{
-          fontSize,
+          fontSize: responsiveFontSize(fontSize),
           fontWeight: 'bold',
-          marginBottom: 15,
+          marginBottom: responsivePadding(15),
           textAlign: 'center'
         }}>
           ⭐ My Favorite AI Responses
         </Text>
 
         {favorites.length === 0 && (
-          <Text style={{ textAlign: 'center', fontSize, color: '#666' }}>
+          <Text style={{ textAlign: 'center', fontSize: responsiveFontSize(fontSize), color: '#666' }}>
             No favorites yet.
           </Text>
         )}
@@ -34,22 +34,22 @@ export default function FavoritesScreen() {
           <View key={index} style={[globalStyles.card, { position: 'relative' }]}>
             <Text style={{
               position: 'absolute',
-              top: 10,
-              right: 10,
-              fontSize,
+              top: responsivePadding(10),
+              right: responsivePadding(10),
+              fontSize: responsiveFontSize(fontSize),
               color: 'gold',
             }}>
               ⭐
             </Text>
 
-            <Text style={{ fontWeight: 'bold', fontSize }}>🧑 You: {item.question}</Text>
-            <Text style={{ color: '#333', fontSize, marginTop: 5 }}>🤖 AI: {item.response}</Text>
+            <Text style={{ fontWeight: 'bold', fontSize: responsiveFontSize(fontSize) }}>🧑 You: {item.question}</Text>
+            <Text style={{ color: '#333', fontSize: responsiveFontSize(fontSize), marginTop: responsivePadding(5) }}>🤖 AI: {item.response}</Text>
 
             <TouchableOpacity
               onPress={() => removeFavorite(index)}
-              style={{ marginTop: 10 }}
+              style={{ marginTop: responsivePadding(10) }}
             >
-              <Text style={{ color: '#FF3B30', fontSize }}>❌ Remove</Text>
+              <Text style={{ color: '#FF3B30', fontSize: responsiveFontSize(fontSize) }}>❌ Remove</Text>
             </TouchableOpacity>
           </View>
         ))}

@@ -1,7 +1,7 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import React, { useContext } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
-import { globalStyles } from '../styles';
+import { globalStyles, responsivePadding } from '../styles';
 import { SettingsContext } from '../SettingsContext';
 import guides from '../guides.json';
 
@@ -35,7 +35,7 @@ export default function LearnBasicsScreen({ navigation }) {
         style={[
           globalStyles.card, 
           { 
-            marginBottom: 10,
+            marginBottom: responsivePadding(10),
             borderLeftWidth: 4,
             borderLeftColor: borderColor,
             backgroundColor: backgroundColor
@@ -68,7 +68,7 @@ export default function LearnBasicsScreen({ navigation }) {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff', padding: 20 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff', padding: responsivePadding(20) }}>
       <Text style={{
         fontSize: fontSize + 6,
         fontWeight: 'bold',

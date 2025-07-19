@@ -1,12 +1,12 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { globalStyles } from '../styles';
+import { globalStyles, responsiveFontSize } from '../styles';
 
 export default function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={globalStyles.container}>
-      <Text style={styles.header}>Welcome to Tech Companion 👋</Text>
+      <Text style={styles.header}>Welcome to ElderlyAI👋</Text>
 
       <TouchableOpacity
         style={globalStyles.button}
@@ -34,7 +34,7 @@ export default function HomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   header: {
-    fontSize: 26,
+    fontSize: responsiveFontSize(26),
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 30,

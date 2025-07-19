@@ -2,7 +2,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Speech from 'expo-speech';
 import React, { useState, useEffect, useContext } from 'react';
 import { View, Text, TouchableOpacity, Alert } from 'react-native';
-import { globalStyles } from '../styles';
+import { globalStyles, responsivePadding } from '../styles';
 import { useNavigation } from '@react-navigation/native';
 import { SettingsContext } from '../SettingsContext';
 
@@ -101,7 +101,7 @@ export default function LearnBasicsGuideScreen({ route }) {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff', padding: 20 }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff', padding: responsivePadding(20) }}>
       <Text style={{
         fontSize: fontSize + 4,
         fontWeight: 'bold',
@@ -123,9 +123,9 @@ export default function LearnBasicsGuideScreen({ route }) {
       {isCompleted && (
         <View style={{
           backgroundColor: '#4CD964',
-          padding: 10,
+          padding: responsivePadding(10),
           borderRadius: 8,
-          marginBottom: 20,
+          marginBottom: responsivePadding(20),
         }}>
           <Text style={{ color: 'white', textAlign: 'center', fontSize: fontSize }}>
             ✅ This guide has been completed!
@@ -136,9 +136,9 @@ export default function LearnBasicsGuideScreen({ route }) {
       {isRead && !isCompleted && (
         <View style={{
           backgroundColor: '#FF9500',
-          padding: 10,
+          padding: responsivePadding(10),
           borderRadius: 8,
-          marginBottom: 20,
+          marginBottom: responsivePadding(20),
         }}>
           <Text style={{ color: 'white', textAlign: 'center', fontSize: fontSize }}>
             📖 Guide read! Now practice to complete it.
