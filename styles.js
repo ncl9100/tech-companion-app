@@ -1,36 +1,45 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
+
+// Responsive scaling factors
+const scale = width / 375; // 375 is iPhone 11 width
+const verticalScale = height / 812; // 812 is iPhone 11 height
+
+export const responsiveFontSize = (size) => Math.round(size * scale);
+export const responsivePadding = (padding) => Math.round(padding * scale);
 
 export const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: responsivePadding(20),
     backgroundColor: '#f9f9f9',
   },
   input: {
     borderColor: '#ccc',
     borderWidth: 1,
-    padding: 15,
-    fontSize: 20,
+    padding: responsivePadding(15),
+    fontSize: responsiveFontSize(20),
     borderRadius: 10,
     backgroundColor: '#fff',
-    marginBottom: 10,
+    marginBottom: responsivePadding(10),
   },
   button: {
     backgroundColor: '#007AFF',
-    padding: 15,
+    padding: responsivePadding(15),
     borderRadius: 10,
     alignItems: 'center',
-    marginVertical: 10,
+    marginVertical: responsivePadding(10),
   },
   buttonText: {
     color: '#fff',
-    fontSize: 20,
+    fontSize: responsiveFontSize(20),
   },
   card: {
     backgroundColor: '#fff',
-    padding: 15,
+    padding: responsivePadding(15),
     borderRadius: 12,
-    marginVertical: 10,
+    marginVertical: responsivePadding(10),
     elevation: 2,
   },
 });

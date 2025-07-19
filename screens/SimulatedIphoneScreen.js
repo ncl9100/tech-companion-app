@@ -1,7 +1,7 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import React, { useState, useContext } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
-import { globalStyles } from '../styles';
+import { globalStyles, responsiveFontSize, responsivePadding } from '../styles';
 import { SettingsContext } from '../SettingsContext';
 
 export default function SimulatedIphoneScreen({ navigation, route }) {
@@ -72,7 +72,7 @@ export default function SimulatedIphoneScreen({ navigation, route }) {
           <Text style={{
             fontSize: fontSize,
             textAlign: 'center',
-            marginBottom: 20,
+            marginBottom: responsivePadding(20),
             color: '#666',
           }}>
             Practice: {practiceTopic}
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   appGrid: {
-    padding: 20,
+    padding: responsivePadding(20),
   },
   appIcon: {
     width: '45%',
@@ -105,11 +105,11 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: responsivePadding(20),
   },
   appIconText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: responsiveFontSize(16),
     fontWeight: 'bold',
   },
 });
