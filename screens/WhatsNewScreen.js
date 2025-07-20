@@ -13,8 +13,10 @@ export default function WhatsNewScreen() {
   const fetchNews = async () => {
     setLoading(true);
     try {
-      // Use Expo Constants to access environment variables
-      const newsApiKey = Constants.expoConfig?.extra?.newsApiKey || '';
+      // Try different ways to access environment variables
+      const newsApiKey = Constants.expoConfig?.extra?.newsApiKey || 
+                         Constants.manifest?.extra?.newsApiKey ||
+                         process.env.NEWS_API_KEY || '';
       
       if (!newsApiKey) {
         // Show mock data when API key is not available
