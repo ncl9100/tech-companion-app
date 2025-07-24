@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import guides from '../guides.json';
-
-const screenWidth = Dimensions.get('window').width;
-const screenHeight = Dimensions.get('window').height;
+import { responsiveFontSize, responsivePadding } from '../styles';
 
 export default function GuidePlayerScreen({ route, navigation }) {
   const { guideId } = route.params;
@@ -67,51 +65,51 @@ export default function GuidePlayerScreen({ route, navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    padding: responsivePadding(16),
     backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
   },
   title: {
-    fontSize: 24,
+    fontSize: responsiveFontSize(24),
     fontWeight: 'bold',
-    marginBottom: 20,
+    marginBottom: responsivePadding(20),
     textAlign: 'center',
   },
   instruction: {
-    fontSize: 16,
+    fontSize: responsiveFontSize(16),
     textAlign: 'center',
-    marginBottom: 40,
+    marginBottom: responsivePadding(40),
   },
   completeButton: {
     backgroundColor: '#4CAF50',
-    paddingVertical: 12,
-    paddingHorizontal: 24,
+    paddingVertical: responsivePadding(12),
+    paddingHorizontal: responsivePadding(24),
     borderRadius: 8,
   },
   returnButton: {
     backgroundColor: '#2196F3',
-    paddingVertical: 12,
-    paddingHorizontal: 24,
+    paddingVertical: responsivePadding(12),
+    paddingHorizontal: responsivePadding(24),
     borderRadius: 8,
   },
   homeButton: {
     backgroundColor: '#aaa',
-    paddingVertical: 12,
-    paddingHorizontal: 24,
+    paddingVertical: responsivePadding(12),
+    paddingHorizontal: responsivePadding(24),
     borderRadius: 8,
-    marginTop: 20,
+    marginTop: responsivePadding(20),
   },
   buttonText: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: responsiveFontSize(16),
     fontWeight: 'bold',
   },
   completedText: {
-    fontSize: 22,
+    fontSize: responsiveFontSize(22),
     fontWeight: 'bold',
     color: '#4CAF50',
-    marginBottom: 30,
+    marginBottom: responsivePadding(30),
     textAlign: 'center',
   },
 });

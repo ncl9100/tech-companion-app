@@ -5,13 +5,14 @@ import {
   View, TextInput, Text, ScrollView, TouchableOpacity, Keyboard, Alert
 } from 'react-native';
 import axios from 'axios';
-import { globalStyles } from '../styles';
+import { globalStyles, responsiveFontSize, responsivePadding } from '../styles';
 import { SettingsContext } from '../SettingsContext';
+import Constants from 'expo-constants';
 
 // IMPORTANT: You must securely provide your OpenAI API key for production use.
 // DO NOT hardcode your API key in the source code for App Store submission.
 // Recommended: Use environment variables or a secure backend proxy.
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '';
+const OPENAI_API_KEY = Constants.expoConfig?.extra?.openaiApiKey || '';
 
 export default function AskAIHelperScreen() {
   const { fontSize, speechRate, favorites, setFavorites } = useContext(SettingsContext);
@@ -24,6 +25,13 @@ export default function AskAIHelperScreen() {
 
   const askAI = async () => {
     if (!question) return;
+
+    // Check if API key is available
+    if (!OPENAI_API_KEY) {
+      setResponse('AI service is not configured. Please contact support.');
+      setLoading(false);
+      return;
+    }
 
     Keyboard.dismiss();
     setLoading(true);
@@ -75,7 +83,13 @@ export default function AskAIHelperScreen() {
 
     } catch (error) {
       console.error(error);
-      setResponse('Error contacting AI. Please try again.');
+      if (error.response?.status === 401) {
+        setResponse('AI service authentication failed. Please contact support.');
+      } else if (error.response?.status === 429) {
+        setResponse('AI service is busy. Please try again later.');
+      } else {
+        setResponse('Error contacting AI. Please try again.');
+      }
     } finally {
       setLoading(false);
     }
@@ -129,16 +143,16 @@ export default function AskAIHelperScreen() {
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <ScrollView
         contentContainerStyle={{
-          padding: 20,
-          paddingBottom: 50,
+          padding: responsivePadding(20),
+          paddingBottom: responsivePadding(50),
           flexGrow: 1,
         }}
         ref={scrollViewRef}
       >
         <Text style={{
-          fontSize,
+          fontSize: responsiveFontSize(fontSize),
           fontWeight: 'bold',
-          marginBottom: 15,
+          marginBottom: responsivePadding(15),
           textAlign: 'center'
         }}>
           Ask AI Helper 🤖
@@ -146,10 +160,10 @@ export default function AskAIHelperScreen() {
 
         {/* Single suggestion button for clean UI */}
         <TouchableOpacity
-          style={[globalStyles.button, { marginBottom: 10 }]}
+          style={[globalStyles.button, { marginBottom: responsivePadding(10) }]}
           onPress={() => setQuestion("How do I use my iPhone camera?")}
         >
-          <Text style={[globalStyles.buttonText, { fontSize }]}>
+          <Text style={[globalStyles.buttonText, { fontSize: responsiveFontSize(fontSize) }]}>
             Example: How do I use my iPhone camera?
           </Text>
         </TouchableOpacity>
@@ -167,7 +181,7 @@ export default function AskAIHelperScreen() {
           </Text>
         </TouchableOpacity>
 
-        <Text style={{ marginTop: 20, fontSize, fontWeight: 'bold' }}>Conversation History:</Text>
+        <Text style={{ marginTop: responsivePadding(20), fontSize: responsiveFontSize(fontSize), fontWeight: 'bold' }}>Conversation History:</Text>
         {history.map((item, index) => {
           const isFavorited = favorites.some(
             fav => fav.response === item.response && fav.question === item.question
