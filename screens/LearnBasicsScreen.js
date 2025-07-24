@@ -1,12 +1,27 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { globalStyles, responsivePadding } from '../styles';
 import { SettingsContext } from '../SettingsContext';
 import guides from '../guides.json';
+import { useNavigation, useRoute, useFocusEffect } from '@react-navigation/native';
 
-export default function LearnBasicsScreen({ navigation }) {
-  const { fontSize, isGuideCompleted, isGuideRead } = useContext(SettingsContext);
+export default function LearnBasicsScreen() {
+  const { fontSize, isGuideCompleted, isGuideRead, markGuideCompleted } = useContext(SettingsContext);
+  const navigation = useNavigation();
+  const route = useRoute();
+
+  useFocusEffect(
+    React.useCallback(() => {
+      const completedGuideId = route.params?.completedGuideId;
+
+      if (completedGuideId) {
+        markGuideCompleted(completedGuideId);
+        // Clear the param to prevent re-marking on next focus
+        navigation.setParams({ completedGuideId: undefined });
+      }
+    }, [route.params])
+  );
 
   const handleSelectTopic = (item) => {
     navigation.navigate('LearnBasicsGuide', { topic: item });
@@ -15,11 +30,11 @@ export default function LearnBasicsScreen({ navigation }) {
   const renderGuideItem = ({ item }) => {
     const isCompleted = isGuideCompleted(item.guide_id);
     const isRead = isGuideRead(item.guide_id);
-    
+
     let borderColor = '#007AFF'; // Default blue
     let backgroundColor = '#fff';
     let statusIcon = '';
-    
+
     if (isCompleted) {
       borderColor = '#4CD964'; // Green for completed
       backgroundColor = '#F0FFF0';
@@ -29,25 +44,23 @@ export default function LearnBasicsScreen({ navigation }) {
       backgroundColor = '#FFF8F0';
       statusIcon = '📖';
     }
-    
+
     return (
       <TouchableOpacity
         style={[
-          globalStyles.card, 
-          { 
+          globalStyles.card,
+          {
             marginBottom: responsivePadding(10),
             borderLeftWidth: 4,
             borderLeftColor: borderColor,
-            backgroundColor: backgroundColor
-          }
+            backgroundColor: backgroundColor,
+          },
         ]}
         onPress={() => handleSelectTopic(item)}
       >
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
           <View style={{ flex: 1 }}>
-            <Text style={{ fontSize: fontSize + 2, fontWeight: 'bold' }}>
-              {item.title}
-            </Text>
+            <Text style={{ fontSize: fontSize + 2, fontWeight: 'bold' }}>{item.title}</Text>
             <Text style={{ fontSize: fontSize - 2, color: '#666', marginTop: 4 }}>
               {item.category} • {item.tags.join(', ')}
             </Text>
@@ -58,9 +71,7 @@ export default function LearnBasicsScreen({ navigation }) {
             )}
           </View>
           {statusIcon && (
-            <Text style={{ fontSize: fontSize + 4, color: borderColor }}>
-              {statusIcon}
-            </Text>
+            <Text style={{ fontSize: fontSize + 4, color: borderColor }}>{statusIcon}</Text>
           )}
         </View>
       </TouchableOpacity>
@@ -69,21 +80,25 @@ export default function LearnBasicsScreen({ navigation }) {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff', padding: responsivePadding(20) }}>
-      <Text style={{
-        fontSize: fontSize + 6,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginBottom: 20,
-      }}>
+      <Text
+        style={{
+          fontSize: fontSize + 6,
+          fontWeight: 'bold',
+          textAlign: 'center',
+          marginBottom: 20,
+        }}
+      >
         Learn the Basics 📚
       </Text>
 
-      <Text style={{
-        fontSize: fontSize - 2,
-        textAlign: 'center',
-        color: '#666',
-        marginBottom: 20,
-      }}>
+      <Text
+        style={{
+          fontSize: fontSize - 2,
+          textAlign: 'center',
+          color: '#666',
+          marginBottom: 20,
+        }}
+      >
         Tap on any guide to start learning. Complete both the guide and practice to earn a checkmark! ✅
       </Text>
 
