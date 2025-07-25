@@ -104,19 +104,4 @@ export default function App() {
     </SettingsProvider>
   );
 }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-//bruhhi
->>>>>>> Stashed changes
-=======
-//bruhhi
->>>>>>> Stashed changes
-=======
-//bruhhi
->>>>>>> Stashed changes
-=======
-//bruhhi
->>>>>>> Stashed changes
+//bruhhhhhhasfafawefwafewaf skibid
