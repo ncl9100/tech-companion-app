@@ -104,3 +104,7 @@ export default function App() {
     </SettingsProvider>
   );
 }
+<<<<<<< Updated upstream
+=======
+//bruhhi
+>>>>>>> Stashed changes
