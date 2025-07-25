@@ -1,7 +1,7 @@
 # App Store Submission Checklist for TechCompanionApp
 
 ## 🚨 CRITICAL FIXES NEEDED
-
+## test
 ### 1. API Key Security
 -  **FIX IMMEDIATELY**: Uncomment and properly secure OpenAI API key in AskAIHelperScreen.js
 - [ ] Use environment variables or secure key management
