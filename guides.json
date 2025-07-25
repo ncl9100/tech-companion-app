@@ -1,75 +1,91 @@
 [
   {
-    "guide_id": "connect_wifi",
-    "title": "Connect to Wi-Fi",
-    "category": "Settings",
-    "tags": ["wifi", "internet", "beginner"],
-    "steps": [
-      {
-        "image": "settings_home.png",
-        "instruction": "Open the Settings app on your iPhone.",
-        "hotspots": [
-          {
-            "x": 0.1,
-            "y": 0.23,
-            "width": 0.8,
-            "height": 0.07
-          }
-        ]
+  "guide_id": "connect_wifi",
+  "title": "Connect to Wi-Fi",
+  "category": "Settings",
+  "tags": ["wifi", "internet", "beginner"],
+  "steps": [
+    {
+      "image": "settings_home.png",
+      "instruction": "Open the Settings app on your iPhone.",
+      "hotspots": [
+        {
+          "x": 0.1,
+          "y": 0.23,
+          "width": 0.8,
+          "height": 0.07,
+          "action": "open_settings"
+        }
+      ]
+    },
+    {
+      "image": "wifi_settings.png",
+      "instruction": "Tap on 'Wi-Fi' in the Settings screen.",
+      "hotspots": [
+        {
+          "x": 0.85,
+          "y": 0.15,
+          "width": 0.1,
+          "height": 0.1,
+          "action": "open_wifi"
+        }
+      ]
+    },
+    {
+      "image": "wifi_settings.png",
+      "instruction": "Turn on the Wi-Fi switch by tapping it.",
+      "hotspots": [
+        {
+          "x": 0.85,
+          "y": 0.15,
+          "width": 0.1,
+          "height": 0.1,
+          "action": "toggle_wifi"
+        }
+      ]
+    },
+    {
+      "image": "wifi_settings.png",
+      "instruction": "Select your Wi-Fi network named 'MyHomeNetwork' from the list.",
+      "hotspots": [
+        {
+          "x": 0.1,
+          "y": 0.3,
+          "width": 0.8,
+          "height": 0.1,
+          "action": "select_network"
+        }
+      ]
+    },
+    {
+      "image": "wifi_password.png",
+      "instruction": "Enter the Wi-Fi password shown below:\n\nPassword: supersecure123",
+      "input": {
+        "type": "text",
+        "placeholder": "Enter Wi-Fi password",
+        "correct_answer": "supersecure123"
       },
-      {
-        "image": "wifi_settings.png",
-        "instruction": "Tap on 'Wi-Fi' in the Settings screen.",
-        "hotspots": [
-          {
-            "x": 0.85,
-            "y": 0.15,
-            "width": 0.1,
-            "height": 0.1
-          }
-        ]
-      },
-      {
-        "image": "wifi_settings.png",
-        "instruction": "Turn on the Wi-Fi switch by tapping it.",
-        "hotspots": [
-          {
-            "x": 0.85,
-            "y": 0.15,
-            "width": 0.1,
-            "height": 0.1
-          }
-        ]
-      },
-      {
-        "image": "wifi_settings.png",
-        "instruction": "Select your Wi-Fi network from the list.",
-        "hotspots": [
-          {
-            "x": 0.1,
-            "y": 0.3,
-            "width": 0.8,
-            "height": 0.1
-          }
-        ]
-      },
-      {
-        "image": "wifi_settings.png",
-        "instruction": "Enter your Wi-Fi password when prompted.",
-        "hotspots": [
-          {
-            "x": 0.5,
-            "y": 0.6,
-            "width": 0.4,
-            "height": 0.1
-          }
-        ]
+      "hotspots": [
+        {
+          "x": 0.5,
+          "y": 0.6,
+          "width": 0.4,
+          "height": 0.1,
+          "action": "enter_password"
+        }
+      ],
+      "completed_message": "Password accepted! You're now connected.",
+      "next_action": {
+        "type": "button",
+        "label": "Back to Learn Basics",
+        "go_to_tab": "learn_basics"
       }
-    ]
-  },
+    }
+  ]
+},
   {
     "guide_id": "settings_guide",
-    "title": "Settings Guide",
+    "title": "Using the Settings App",
     "category": "Settings",
     "tags": ["settings", "configuration", "beginner"],
     "steps": [
@@ -81,7 +97,8 @@
             "x": 0.1,
             "y": 0.23,
             "width": 0.8,
-            "height": 0.07
+            "height": 0.07,
+            "action": "open_settings"
           }
         ]
       },
@@ -93,7 +110,8 @@
             "x": 0.1,
             "y": 0.4,
             "width": 0.8,
-            "height": 0.4
+            "height": 0.4,
+            "action": "scroll_menu"
           }
         ]
       },
@@ -105,7 +123,8 @@
             "x": 0.1,
             "y": 0.3,
             "width": 0.8,
-            "height": 0.1
+            "height": 0.1,
+            "action": "tap_setting"
           }
         ]
       }
@@ -125,7 +144,8 @@
             "x": 0.1,
             "y": 0.23,
             "width": 0.8,
-            "height": 0.07
+            "height": 0.07,
+            "action": "open_camera"
           }
         ]
       },
@@ -137,7 +157,8 @@
             "x": 0.1,
             "y": 0.2,
             "width": 0.8,
-            "height": 0.6
+            "height": 0.6,
+            "action": "aim_camera"
           }
         ]
       },
@@ -149,7 +170,8 @@
             "x": 0.45,
             "y": 0.8,
             "width": 0.1,
-            "height": 0.1
+            "height": 0.1,
+            "action": "take_photo"
           }
         ]
       },
@@ -161,7 +183,8 @@
             "x": 0.1,
             "y": 0.9,
             "width": 0.8,
-            "height": 0.05
+            "height": 0.05,
+            "action": "photo_saved"
           }
         ]
       }
@@ -181,7 +204,8 @@
             "x": 0.1,
             "y": 0.23,
             "width": 0.8,
-            "height": 0.07
+            "height": 0.07,
+            "action": "open_contacts"
           }
         ]
       },
@@ -193,7 +217,8 @@
             "x": 0.1,
             "y": 0.2,
             "width": 0.8,
-            "height": 0.6
+            "height": 0.6,
+            "action": "scroll_contacts"
           }
         ]
       },
@@ -205,7 +230,8 @@
             "x": 0.1,
             "y": 0.3,
             "width": 0.8,
-            "height": 0.1
+            "height": 0.1,
+            "action": "tap_contact"
           }
         ]
       },
@@ -217,7 +243,8 @@
             "x": 0.8,
             "y": 0.5,
             "width": 0.15,
-            "height": 0.1
+            "height": 0.1,
+            "action": "call_contact"
           }
         ]
       }
@@ -237,7 +264,8 @@
             "x": 0.1,
             "y": 0.23,
             "width": 0.8,
-            "height": 0.07
+            "height": 0.07,
+            "action": "open_safari"
           }
         ]
       },
@@ -249,7 +277,8 @@
             "x": 0.1,
             "y": 0.1,
             "width": 0.8,
-            "height": 0.05
+            "height": 0.05,
+            "action": "tap_address_bar"
           }
         ]
       },
@@ -261,7 +290,8 @@
             "x": 0.1,
             "y": 0.1,
             "width": 0.8,
-            "height": 0.05
+            "height": 0.05,
+            "action": "type_website"
           }
         ]
       },
@@ -273,7 +303,8 @@
             "x": 0.8,
             "y": 0.9,
             "width": 0.15,
-            "height": 0.05
+            "height": 0.05,
+            "action": "tap_go"
           }
         ]
       }
@@ -293,7 +324,8 @@
             "x": 0.1,
             "y": 0.23,
             "width": 0.8,
-            "height": 0.07
+            "height": 0.07,
+            "action": "open_settings"
           }
         ]
       },
@@ -305,7 +337,8 @@
             "x": 0.1,
             "y": 0.4,
             "width": 0.8,
-            "height": 0.1
+            "height": 0.1,
+            "action": "open_notifications"
           }
         ]
       },
@@ -317,7 +350,8 @@
             "x": 0.1,
             "y": 0.3,
             "width": 0.8,
-            "height": 0.1
+            "height": 0.1,
+            "action": "select_app"
           }
         ]
       },
@@ -329,7 +363,8 @@
             "x": 0.85,
             "y": 0.2,
             "width": 0.1,
-            "height": 0.1
+            "height": 0.1,
+            "action": "toggle_notifications"
           }
         ]
       }
@@ -349,7 +384,8 @@
             "x": 0.05,
             "y": 0.3,
             "width": 0.1,
-            "height": 0.2
+            "height": 0.2,
+            "action": "locate_volume_buttons"
           }
         ]
       },
@@ -361,7 +397,8 @@
             "x": 0.05,
             "y": 0.2,
             "width": 0.1,
-            "height": 0.1
+            "height": 0.1,
+            "action": "volume_up"
           }
         ]
       },
@@ -373,7 +410,8 @@
             "x": 0.05,
             "y": 0.4,
             "width": 0.1,
-            "height": 0.1
+            "height": 0.1,
+            "action": "volume_down"
           }
         ]
       },
@@ -385,7 +423,8 @@
             "x": 0.2,
             "y": 0.3,
             "width": 0.6,
-            "height": 0.1
+            "height": 0.1,
+            "action": "show_volume_indicator"
           }
         ]
       }
@@ -405,7 +444,8 @@
             "x": 0.1,
             "y": 0.23,
             "width": 0.8,
-            "height": 0.07
+            "height": 0.07,
+            "action": "open_maps"
           }
         ]
       },
@@ -417,7 +457,8 @@
             "x": 0.1,
             "y": 0.1,
             "width": 0.8,
-            "height": 0.05
+            "height": 0.05,
+            "action": "tap_search_bar"
           }
         ]
       },
@@ -429,7 +470,8 @@
             "x": 0.1,
             "y": 0.1,
             "width": 0.8,
-            "height": 0.05
+            "height": 0.05,
+            "action": "type_place_name"
           }
         ]
       },
@@ -441,7 +483,8 @@
             "x": 0.1,
             "y": 0.2,
             "width": 0.8,
-            "height": 0.1
+            "height": 0.1,
+            "action": "select_place"
           }
         ]
       },
@@ -453,7 +496,8 @@
             "x": 0.1,
             "y": 0.8,
             "width": 0.8,
-            "height": 0.1
+            "height": 0.1,
+            "action": "tap_directions"
           }
         ]
       }
