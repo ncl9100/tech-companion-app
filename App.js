@@ -105,6 +105,10 @@ export default function App() {
   );
 }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+//bruhhi
+>>>>>>> Stashed changes
 =======
 //bruhhi
 >>>>>>> Stashed changes
