@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "TechCompanionApp",
-    "slug": "TechCompanionApp",
-    "version": "1.0.0",
+    "name": "ElderlyAI",
+    "slug": "elderlyai",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,18 +19,19 @@
         "ITSAppUsesNonExemptEncryption": false,
         "NSPhotoLibraryUsageDescription": "This app may access your photo library to help you learn how to use your iPhone's camera and photos features. This helps provide better guidance when teaching you about your device.",
         "NSSpeechRecognitionUsageDescription": "This app uses speech recognition to help you interact with the AI assistant more easily. You can speak your questions instead of typing them."
-      }
+      },
+      "buildNumber": "2"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
       "package": "com.anonymous.TechCompanionApp"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     },
     "extra": {
       "eas": {
